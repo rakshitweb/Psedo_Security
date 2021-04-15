@@ -1,0 +1,57 @@
+#include<iostream.h>
+#include<graphics.h>
+#include<dos.h>
+#include<process.h>
+#include<conio.h>
+
+int main()
+{
+		clrscr();
+		cleardevice();
+	int gdriver = DETECT, gmode, errorcode;
+	initgraph(&gdriver, &gmode, "");
+	errorcode = graphresult();
+	if (errorcode != grOk)  /* an error occurred */
+	{
+		   printf("Graphics error: %s\n", grapherrormsg(errorcode));
+	   printf("Press any key to halt:");
+	   getch();
+	   exit(1); /* terminate with an error code */
+	}
+		int hi , ji ;
+		int a=getmaxx()/2;
+		int b=getmaxy()/2;
+		for(hi=0;hi<=200;hi++)
+		{
+			setcolor(BLUE);
+			circle(a,b,hi);
+			circle(a,b,(hi-80));
+			circle(a,b,(hi-160));
+			circle(0,0,(hi-50));
+			circle(a*2,0,(hi-50));
+			circle(0,b*2,hi-50);
+			circle(a*2,b*2,hi-50);
+			circle(0,0,(hi-150));
+			circle(a*2,0,(hi-150));
+			circle(0,b*2,hi-150);
+			circle(a*2,b*2,hi-150);
+			setcolor(LIGHTBLUE);
+			circle(a,b,(hi-40));
+			circle(a,b,(hi-120));
+			circle(0,0,hi-100);
+			circle(a*2,0,(hi-100));
+			circle(0,b*2,hi-100);
+			circle(a*2,b*2,hi-100);
+			delay(30);
+		}
+		settextstyle(TRIPLEX_FONT,HORIZ_DIR,9);
+		setcolor(WHITE);
+		outtextxy(a-150,b-130,"THANK");
+		outtextxy(a-90,b+5,"YOU");
+		line(a-151,b-(58-25),a+151,b-(58-25));
+		line(a-155,b-(53-25),a+155,b-(53-25));
+		line(a-91,b+(128-25),a+91,b+(128-25));
+		line(a-96,b+(132-25),a+96,b+(132-25));
+		getch();
+		exit(0);
+}

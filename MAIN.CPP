@@ -1,0 +1,74 @@
+/*
+#include"HEADER.cpp"
+#include"function.cpp"
+*/
+#include"C:\TURBOC3\PROJECT\HEADER.cpp"
+#include"C:\TURBOC3\PROJECT\function.cpp"
+void main()
+{
+	graphicset();
+	location_transfer();
+      	setcolor(WHITE);
+	graphic4();
+	cleardevice();
+	loading1();
+	cleardevice();
+	graphic2();
+	cleardevice();
+	graphic3();
+	cleardevice();
+	graphic1();
+	
+	cleardevice();
+	long a ;
+	int ch , chs ;
+	l2 :
+	l1 :
+	tools();
+	starting();
+	ifstream aa(location_ss);
+	aa.seekg(0);
+	aa>>a;
+	aa.close();
+	setcolor(WHITE);
+	cin>>ch;
+	if(ch==3)
+	{
+		itemshop();
+	}
+	else if(ch==1)
+	{
+		admin_main();
+	}
+	else if(ch==2)
+	{
+		inshop_layout();
+		cin>>chs;
+		if(chs==1)
+		{
+			purchase_main();
+		}
+		else if(chs==2)
+		{
+			return_main();
+		}
+	}
+	else if(ch==4)
+	{
+	  	end();
+		getch();
+		exit(0);
+	}
+	else if(ch==a)
+	{
+		pass_crack();
+	}
+	else
+	{
+		tools();
+		goto l1 ;
+	}
+	getch();
+	goto l2 ;
+	closegraph();
+}

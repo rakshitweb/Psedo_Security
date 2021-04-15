@@ -1,0 +1,172 @@
+#include"C:\\TURBOC3\\PROJECT\\HEADER.cpp"
+void swap (int *a, int *b)
+{
+	int temp = *a;
+	*a = *b;
+	*b = temp;
+}
+void randomize ( int arr[], int n )
+{
+	srand ( time(NULL) );
+	for (int i = n-1; i > 0; i--)
+	{
+		int j = rand() % (i+1);
+		swap(&arr[i], &arr[j]);
+	}
+}
+
+void main()
+{
+	int gdrive=DETECT , gmode , errorcode ;
+	initgraph(&gdrive,&gmode,"C:\\TURBOC3\\BGI");
+	errorcode=graphresult();
+	if(errorcode!=grOk)
+	{
+		printf("%S",grapherrormsg(errorcode));
+		exit(0);
+	}
+
+	clrscr();
+	cleardevice();
+		setcolor(YELLOW);
+		settextstyle(TRIPLEX_FONT,HORIZ_DIR,15);
+		outtextxy(50,35,"WELCOME");
+		outtextxy(235,130,"TO");
+		settextstyle(TRIPLEX_FONT,HORIZ_DIR,9);
+		outtextxy(80,240,"COMPUTER");
+		outtextxy(190,340,"SHOP");
+
+		settextstyle(TRIPLEX_FONT,HORIZ_DIR,15);
+		getch();
+		outtextxy(50,35,"W");
+		outtextxy(142,35,"E");
+		outtextxy(218,35,"L");
+		outtextxy(282,35,"C");
+		outtextxy(354,35,"O");
+		outtextxy(430,35,"M");
+		outtextxy(526,35,"E");
+		outtextxy(235,130,"T");
+		outtextxy(307,130,"O");
+		settextstyle(TRIPLEX_FONT,HORIZ_DIR,9);
+		outtextxy(80,240,"C");
+		outtextxy(134,240,"O");
+		outtextxy(191,240,"M");
+		outtextxy(263,240,"P");
+		outtextxy(323,240,"U");
+		outtextxy(389,240,"T");
+		outtextxy(443,240,"E");
+		outtextxy(500,240,"R");
+		outtextxy(190,340,"S");
+		outtextxy(241,340,"H");
+		outtextxy(307,340,"O");
+		outtextxy(364,340,"P"); //21
+
+		clrscr();
+		cleardevice();
+		int  i , c ;
+		int a[]={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21};
+		int n = sizeof(a)/ sizeof(a[0]);
+		randomize (a, n);
+		setcolor(YELLOW);
+		for(i=0;i<21;i++)
+		{
+			c=a[i];
+			if(c>=1&&c<=9)
+				settextstyle(TRIPLEX_FONT,HORIZ_DIR,15);
+			else if(c>=10&&c<=21)
+				settextstyle(TRIPLEX_FONT,HORIZ_DIR,9);
+			switch(c)
+			{
+				case 1 : {
+					outtextxy(50,35,"W");
+					break;
+				}
+				case 2 : {
+					outtextxy(142,35,"E");
+					break;
+				}
+				case 3 : {
+					outtextxy(218,35,"L");
+					break;
+				}
+				case 4 : {
+					outtextxy(282,35,"C");
+					break;
+				}
+				case 5 : {
+					outtextxy(354,35,"O");
+					break;
+				}
+				case 6 : {
+					outtextxy(430,35,"M");
+					break;
+				}
+				case 7 : {
+					outtextxy(526,35,"E");
+					break;
+				}
+				case 8 : {
+					outtextxy(235,130,"T");
+					break;
+				}
+				case 9 : {
+					outtextxy(307,130,"O");
+					break;
+				}
+				case 10 :{
+					outtextxy(80,240,"C");
+					break;
+				}
+				case 11 : {
+					outtextxy(134,240,"O");
+					break;
+				}
+				case 12 : {
+					outtextxy(191,240,"M");
+					break;
+				}
+				case 13 : {
+					outtextxy(263,240,"P");
+					break;
+				}
+				case 14 : {
+					outtextxy(323,240,"U");
+					break;
+				}
+				case 15 : {
+					outtextxy(389,240,"T");
+					break;
+				}
+				case 16 : {
+					outtextxy(443,240,"E");
+					break;
+				}
+				case 17 : {
+					outtextxy(500,240,"R");
+					break;
+				}
+				case 18 : {
+					outtextxy(190,340,"S");
+					break;
+				}
+				case 19 : {
+					outtextxy(241,340,"H");
+					break;
+				}
+				case 20 : {
+					outtextxy(307,340,"O");
+					break;
+				}
+				case 21 : {
+					outtextxy(364,340,"P");
+					break;
+				}
+			}
+			delay(10);
+		}
+
+	getch();
+	closegraph();
+}
+
+
